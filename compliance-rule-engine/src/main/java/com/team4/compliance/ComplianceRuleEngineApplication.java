@@ -1,5 +1,6 @@
 package com.team4.compliance;
 
+<<<<<<< HEAD
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
@@ -20,10 +21,30 @@ public class ComplianceRuleEngineApplication {
         List<String> result = service.analyzeCompliance(config);
 
        
+=======
+import java.util.List;
+
+public class ComplianceRuleEngineApplication {
+
+    public static void main(String[] args) {
+        
+        ComplianceRule rule = new ComplianceRule("rule1", "Device ID must be device1", config -> config.getDeviceId().equals("device1"));
+        
+        
+        ComplianceService service = new ComplianceService(List.of(rule));
+
+        
+        Configuration config = new Configuration("device1", "{...}");
+
+        
+        List<String> result = service.analyzeCompliance(config);
+
+>>>>>>> bb2131f581a8784940646fe971f26f97ef97d819
         if (result.isEmpty()) {
             System.out.println("All rules are compliant.");
         } else {
             System.out.println("Non-compliant rules: " + result);
+<<<<<<< HEAD
         
         
         ReportService reportService = new ReportService();
@@ -43,3 +64,8 @@ public class ComplianceRuleEngineApplication {
         }
     }
 }
+=======
+        }
+    }
+}
+>>>>>>> bb2131f581a8784940646fe971f26f97ef97d819
