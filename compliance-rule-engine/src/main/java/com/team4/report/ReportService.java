@@ -21,7 +21,7 @@ public class ReportService {
     }
 
     private net.sf.jasperreports.engine.JasperReport getCompiledReport() throws JRException {
-        // Use class loader to load the resource
+        
         return JasperCompileManager.compileReport(
             getClass().getClassLoader().getResourceAsStream("compliance_report.jrxml")
         );
